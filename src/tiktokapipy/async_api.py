@@ -110,6 +110,10 @@ class AsyncTikTokAPI(TikTokAPI):
                     data = json.loads(data)['__DEFAULT_SCOPE__']['webapp.user-detail']
 
                 await page.close()
+
+                if data.get('statusCode') == 10221:
+                    raise ValueError("Couldn't find this account")
+
                 extracted = self._extract_and_dump_data(data, data_model)
             except (ValidationError, IndexError) as e:
                 traceback.print_exception(type(e), e, e.__traceback__)
