@@ -297,11 +297,11 @@ if (navigator.webdriver === false) {
         self,
         response: ChallengePage,
     ):
-        if response.status_code:
-            raise TikTokAPIError(
-                f"Error in challenge extraction: status code {response.status_code} "
-                f"({ERROR_CODES[response.status_code]})"
-            )
+        # if response.status_code:
+        #     raise TikTokAPIError(
+        #         f"Error in challenge extraction: status code {response.status_code} "
+        #         f"({ERROR_CODES[response.status_code]})"
+        #     )
         challenge = response.challenge_info.challenge
         challenge.stats = response.challenge_info.stats
         challenge._api = self

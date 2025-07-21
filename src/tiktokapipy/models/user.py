@@ -62,7 +62,7 @@ class User(LightUser):
     # Avatar links #
     ################
     # avatar_larger: Optional[str]
-    # avatar_medium: Optional[str]
+    avatar_medium: Optional[str]
     # avatar_thumb: Optional[Union[str, dict]]
 
     ##################################################################################
